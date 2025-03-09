@@ -1,0 +1,5 @@
+SELECT Users.name, SUM(Orders.total_amount)
+FROM Users
+JOIN Orders ON Users.id = Orders.user_id
+GROUP BY Users.id
+HAVING SUM(total_amount) > 1000
